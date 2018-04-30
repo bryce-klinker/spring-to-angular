@@ -10,6 +10,7 @@ import java.util.ArrayList;
 @RestController
 public class RestApi {
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/movies")
     public Movie[] getMovies() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -38,6 +39,7 @@ public class RestApi {
         return moviesArray;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/movies/{id}")
     public Movie getMovie(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -62,6 +64,7 @@ public class RestApi {
         return movie;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/movies/{id}/actors")
     public Actor[] getMovieActors(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -87,6 +90,7 @@ public class RestApi {
         return moviesArray;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/movies/{id}/director")
     public Director getMovieDirector(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -109,6 +113,7 @@ public class RestApi {
         return movie;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, path = "/movies")
     public void addMovie(@RequestBody Movie movie) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -123,6 +128,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, path = "/movies/{movieId}/actors/{actorId}")
     public void addMovieActor(@PathVariable long movieId, @PathVariable long actorId) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -137,6 +143,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, path = "/movies/{movieId}/director/{directorId}")
     public void addMovieDirector(@PathVariable long movieId, @PathVariable long directorId) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -150,6 +157,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.DELETE, path = "/movies/{id}")
     public void deleteMovie(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -164,6 +172,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.DELETE, path = "/movies/{movieId}/actors/{actorId}")
     public void deleteMovieActor(@PathVariable long movieId, @PathVariable long actorId) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -178,6 +187,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.DELETE, path = "/movies/{movieId}/director")
     public void deleteMovieDirector(@PathVariable long movieId) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -192,6 +202,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/actors")
     public Actor[] getActors() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -217,6 +228,7 @@ public class RestApi {
         return moviesArray;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/actors/{id}")
     public Actor getActor(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -238,6 +250,7 @@ public class RestApi {
         return actor;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, path = "/actors")
     public void addActor(@RequestBody Actor movie) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -252,6 +265,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.DELETE, path = "/actors/{id}")
     public void deleteActor(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -266,6 +280,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/directors")
     public Director[] getDirectors() throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -291,6 +306,7 @@ public class RestApi {
         return moviesArray;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.GET, path = "/directors/{id}")
     public Director getDirector(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -312,6 +328,7 @@ public class RestApi {
         return actor;
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.POST, path = "/directors")
     public void addDirector(@RequestBody Director movie) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
@@ -326,6 +343,7 @@ public class RestApi {
         connection.close();
     }
 
+    @CrossOrigin(origins = "*")
     @RequestMapping(method = RequestMethod.DELETE, path = "/directors/{id}")
     public void deleteDirector(@PathVariable long id) throws SQLException, ClassNotFoundException {
         Class.forName("org.postgresql.Driver");
