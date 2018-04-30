@@ -40,6 +40,7 @@ import {
   MatToolbarModule,
   MatTooltipModule
 } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
 
@@ -86,6 +87,7 @@ import { AppComponent } from './app.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    FlexLayoutModule,
     HttpClientModule
   ],
   providers: [],

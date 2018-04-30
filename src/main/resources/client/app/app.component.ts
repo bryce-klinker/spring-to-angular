@@ -17,14 +17,23 @@ export class AppComponent implements OnInit {
   movieDirector: Director;
 
   actors: Actor[];
+  selectedActor: Actor;
 
   directors: Director[];
+  selectedDirector: Director;
+
+  showMovies: boolean;
+  showActors: boolean;
+  showDirectors: boolean;
 
   constructor(private httpClient: HttpClient) {
 
   }
 
   public ngOnInit() {
+    this.showMovies = true;
+    this.showActors = false;
+    this.showDirectors = false;
     this.httpClient.get<Movie[]>('http://localhost:8080/movies')
       .subscribe(movies => this.movies = movies);
 
@@ -43,5 +52,23 @@ export class AppComponent implements OnInit {
 
     this.httpClient.get<Director>("http://localhost:8080/movies/" + movie.id + "/director")
       .subscribe(director => this.movieDirector = director);
+  }
+
+  public goToMovies() {
+    this.showMovies = true;
+    this.showActors = false;
+    this.showDirectors = false;
+  }
+
+  public goToActors() {
+    this.showMovies = false;
+    this.showActors = true;
+    this.showDirectors = false;
+  }
+
+  public goToDirectors() {
+    this.showMovies = false;
+    this.showActors = false;
+    this.showDirectors = true;
   }
 }
